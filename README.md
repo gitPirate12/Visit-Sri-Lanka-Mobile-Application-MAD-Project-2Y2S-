@@ -12,3 +12,10 @@ Therefore, our group decided to develop a mobile application solution called “
 04.	Tour Guide Registration and Selecting Tour Guides
 These four main components are implemented by the members of group.
 
+##Group Members
+
+#01. IT21177514 Ransika M.R.T.-()
+#02. IT20012892 Ahamed M.S.A.-()
+#03. IT21193804 Weerasekara D.D.R.R.-()
+#04. IT21158568 Sindujan P.-()
+
