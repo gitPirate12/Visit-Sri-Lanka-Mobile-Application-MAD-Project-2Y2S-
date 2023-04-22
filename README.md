@@ -16,6 +16,6 @@ These four main components are implemented by the members of group.
 
 ### 01. IT21177514 Ransika M.R.T.-(M. Ranasinghe Tharin Ransika)
 ### 02. IT20012892 Ahamed M.S.A.-()
-### 03. IT21193804 Weerasekara D.D.R.R.-()
+### 03. IT21193804 Weerasekara D.D.R.R.-(DulanWeerasekara)
 ### 04. IT21158568 Sindujan P.-()
 
