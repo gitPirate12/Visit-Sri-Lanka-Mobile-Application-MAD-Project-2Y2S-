@@ -9,7 +9,7 @@
     <string name="catCountryYouFromField">Country You From</string>
     <string name="catCreatePassword">Create a Password</string>
     <string name="catConfirmPassword">Confirm Password</string>
-    <string name="catUploadProfilePictureButton">Upload Profile Picture</string>
+    <string name="catUploadProfilePictureButton">Pick Image as Profile Picture</string>
     <string name="catCreateAccountButton">Create Account</string>
 
     <!--Sign In Activity(si)-->
