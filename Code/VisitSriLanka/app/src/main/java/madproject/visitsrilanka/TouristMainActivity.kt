@@ -2,26 +2,31 @@ package madproject.visitsrilanka
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_tourist_main.*
 
 class TouristMainActivity : AppCompatActivity() {
+
+    //create Fragment objects
+    var touristAccountFragment=TouristAccountFragment()
+    var shareMyExperiencesFragment=ShareMyExperiencesFragment()
+    var taxiFragment=TaxiFragment()
+    var tourGuidesFragment=TourGuidesFragment()
+    var hotelsAndRestaurentsFragment=HotelsAndRestaurentsFragment()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tourist_main)
 
-        //create Fragment objects
-        var touristAccountFragment=TouristAccountFragment()
-        var shareMyExperiencesFragment=ShareMyExperiencesFragment()
-        var taxiFragment=TaxiFragment()
-        var tourGuidesFragment=TourGuidesFragment()
-        var hotelsAndRestaurentsFragment=HotelsAndRestaurentsFragment()
 
+        //get value passed by intent in signInActivity
+        var touristEmail=intent.getStringExtra("touristEmail")
 
         //moving fragment to fragment
         bottomNavigationBar.setOnItemSelectedListener {
             when(it.itemId){
-                R.id.myAccount->changeFragment(touristAccountFragment)
+                R.id.myAccount->displayTouristAccountFragment(touristAccountFragment,touristEmail)
                 R.id.experiences->changeFragment(shareMyExperiencesFragment)
                 R.id.taxies->changeFragment(taxiFragment)
                 R.id.tourGuides->changeFragment(tourGuidesFragment)
@@ -36,7 +41,25 @@ class TouristMainActivity : AppCompatActivity() {
 
     }//end method onCreate
 
+    private fun displayTouristAccountFragment(fragment: Fragment,touristEmail:String?){
+        //!!! this function is specially used to display TouristAccountFragment
+
+        //passing touristEmail to fragment
+        var myBundle=Bundle()
+        myBundle.putString("touristEmail",touristEmail)
+        touristAccountFragment.arguments=myBundle
+
+        supportFragmentManager.beginTransaction().apply {
+
+            replace(R.id.fragmentContainerView,fragment)
+            commit()
+        }
+
+
+    }//end function displayTouristAccountFragment
+
     private fun changeFragment(fragment: Fragment){
+
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.fragmentContainerView,fragment)
             commit()

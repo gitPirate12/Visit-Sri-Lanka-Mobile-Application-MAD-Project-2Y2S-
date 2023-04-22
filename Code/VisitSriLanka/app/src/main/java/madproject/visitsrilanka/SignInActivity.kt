@@ -56,6 +56,7 @@ class SignInActivity : AppCompatActivity() {
 
             val moveToTouristMainActivity= Intent(this,TouristMainActivity::class.java)
             moveToTouristMainActivity.putExtra("touristEmail",appUserEmail.toString())
+            Toast.makeText(this,"Not null ${appUserEmail.toString()}",Toast.LENGTH_SHORT).show()
             startActivity(moveToTouristMainActivity)
         }//end if
         else{
