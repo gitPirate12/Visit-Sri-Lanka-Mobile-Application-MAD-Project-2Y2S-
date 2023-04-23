@@ -15,7 +15,7 @@ class VisitExperiencesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_share_my_experiences, container, false)
+        return inflater.inflate(R.layout.fragment_visit_experiences, container, false)
     }
 
 

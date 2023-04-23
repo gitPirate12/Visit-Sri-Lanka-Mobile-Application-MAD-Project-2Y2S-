@@ -16,6 +16,7 @@ import madproject.visitsrilanka.databinding.FragmentTouristAccountBinding
 
 class TouristAccountFragment : Fragment() {
 
+    //fragment binding
     private lateinit var binding: FragmentTouristAccountBinding
     private lateinit var touristName:String
 
@@ -34,7 +35,7 @@ class TouristAccountFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //get values passed by bundle
+        //get values passed with bundle
         var bundle=arguments
         var touristEmail=bundle?.getString("touristEmail")
 
@@ -120,6 +121,6 @@ class TouristAccountFragment : Fragment() {
         }
 
 
-    }
+    }//end function moveToShareMyExperiencesFragment
 
 }
