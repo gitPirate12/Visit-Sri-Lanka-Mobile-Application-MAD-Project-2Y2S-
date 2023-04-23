@@ -36,9 +36,9 @@ class TouristAccountFragment : Fragment() {
         //var touristEmail= this.arguments?.getString("touristEmail")
 
         if(touristEmail!=null){
-            
+
             Toast.makeText(activity,"touristEmail $touristEmail recieved by fragment",Toast.LENGTH_SHORT).show()
-            binding.touristEmailTextView.text=touristEmail
+            binding.touristEmailInProfile.text=touristEmail
         }//end if
         else{
             Toast.makeText(activity,"touristEmail is not Exists",Toast.LENGTH_SHORT).show()
