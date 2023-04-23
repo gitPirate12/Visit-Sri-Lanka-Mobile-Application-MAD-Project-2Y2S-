@@ -6,7 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-class AlertsFragment : Fragment() {
+
+class VisitExperiencesFragment : Fragment() {
 
 
     override fun onCreateView(
@@ -14,7 +15,7 @@ class AlertsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_alerts, container, false)
+        return inflater.inflate(R.layout.fragment_share_my_experiences, container, false)
     }
 
 

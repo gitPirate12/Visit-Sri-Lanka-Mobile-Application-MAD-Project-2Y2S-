@@ -2,7 +2,6 @@ package madproject.visitsrilanka
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_tourist_main.*
 
@@ -10,7 +9,7 @@ class TouristMainActivity : AppCompatActivity() {
 
     //create Fragment objects
     var touristAccountFragment=TouristAccountFragment()
-    var shareMyExperiencesFragment=ShareMyExperiencesFragment()
+    var visitExperiencesFragment=VisitExperiencesFragment()
     var taxiFragment=TaxiFragment()
     var tourGuidesFragment=TourGuidesFragment()
     var hotelsAndRestaurentsFragment=HotelsAndRestaurentsFragment()
@@ -27,7 +26,7 @@ class TouristMainActivity : AppCompatActivity() {
         bottomNavigationBar.setOnItemSelectedListener {
             when(it.itemId){
                 R.id.myAccount->displayTouristAccountFragment(touristAccountFragment,touristEmail)
-                R.id.experiences->changeFragment(shareMyExperiencesFragment)
+                R.id.experiences->changeFragment(visitExperiencesFragment)
                 R.id.taxies->changeFragment(taxiFragment)
                 R.id.tourGuides->changeFragment(tourGuidesFragment)
                 R.id.hotelsAndRestaurents->changeFragment(hotelsAndRestaurentsFragment)

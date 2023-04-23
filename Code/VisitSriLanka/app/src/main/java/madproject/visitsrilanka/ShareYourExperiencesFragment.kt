@@ -6,8 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-
-class ShareMyExperiencesFragment : Fragment() {
+class ShareYourExperiencesFragment : Fragment() {
 
 
     override fun onCreateView(
@@ -15,7 +14,7 @@ class ShareMyExperiencesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_share_my_experiences, container, false)
+        return inflater.inflate(R.layout.fragment_share_your_experiences, container, false)
     }
 
 

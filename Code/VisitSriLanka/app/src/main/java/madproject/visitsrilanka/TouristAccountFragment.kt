@@ -17,6 +17,7 @@ import madproject.visitsrilanka.databinding.FragmentTouristAccountBinding
 class TouristAccountFragment : Fragment() {
 
     private lateinit var binding: FragmentTouristAccountBinding
+    private lateinit var touristName:String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,7 +51,7 @@ class TouristAccountFragment : Fragment() {
             database.child(formattedEmail[0]).get().addOnSuccessListener {
 
                 if(it.exists()){
-                    var touristName=it.child("touristName").value.toString()
+                    touristName=it.child("touristName").value.toString()
                     var touristEmail=it.child("touristEmail").value.toString()
                     var touristCountry=it.child("touristCountry").value.toString()
                     var touristContactNumber=it.child("touristContactNumber").value.toString()
@@ -75,6 +76,15 @@ class TouristAccountFragment : Fragment() {
         }//end else
 
 
+        binding.shareYourExperiencesButton.setOnClickListener {
+
+            moveToShareMyExperiencesFragment(touristName)
+        }//end method setOnClickListener
+
+
+
+
+
     }//end method onViewCreated
 
     private fun renderingValuesOnAccount(touristName:String,touristEmail:String,touristContactNumber:String,touristCountry:String,touristProfilePicture:String){
@@ -93,7 +103,23 @@ class TouristAccountFragment : Fragment() {
         var formattedTouristName=touristName.split(" ").toTypedArray()
         binding.touristAccountHeading.text="Welcome ${formattedTouristName[0]}"
 
-    }
+    }//end function  renderingValuesOnAccount
 
+    private fun moveToShareMyExperiencesFragment(touristName:String){
+
+        //implementation of moving this fragment to ShareYourExperiencesFragment
+        var shareYourExperiencesFragment=ShareYourExperiencesFragment()
+
+        //passing some data using bundle with shareYourExperiences fragment
+        var myBundle=Bundle()
+        myBundle.putString("touristName",touristName)
+        shareYourExperiencesFragment.arguments=myBundle
+        activity?.supportFragmentManager?.beginTransaction()?.apply {
+            replace(R.id.fragmentContainerView,shareYourExperiencesFragment)
+            commit()
+        }
+
+
+    }
 
 }
