@@ -74,6 +74,7 @@ class ShareYourExperiencesFragment : Fragment() {
         }//end method setOnClickListener
 
         binding.uploadSomePicturesButton.setOnClickListener {
+
             var myFileIntent= Intent(Intent.ACTION_GET_CONTENT)
             myFileIntent.setType("image/*")
             ActivityResultLauncher.launch(myFileIntent)
@@ -81,10 +82,11 @@ class ShareYourExperiencesFragment : Fragment() {
 
     }//end method onViewCreated
 
-    private fun saveExperienceDataInDatabase(touristName:String,nameOfThePlace:String,location:String,description:String,upload:String,date:String,time:String){
+    private fun saveExperienceDataInDatabase(touristName:String,nameOfThePlace:String,location:String,description:String,uploadParameter:String,date:String,time:String){
+
 
         //create Experience object
-        val experience=Experience(touristName,nameOfThePlace,location,description,upload,date,time)
+        val experience=Experience(touristName,nameOfThePlace,location,description,uploadParameter,date,time)
 
         //passing data to database
         dataBase=FirebaseDatabase.getInstance().getReference("Tourists_Experience")
@@ -137,9 +139,3 @@ class ShareYourExperiencesFragment : Fragment() {
     }//end val ActivityResultLauncher
 
 }
-/*
-private fun ImageView.setImageDrawable(baselineUploadFile24: Int) {
-
-}
-
- */

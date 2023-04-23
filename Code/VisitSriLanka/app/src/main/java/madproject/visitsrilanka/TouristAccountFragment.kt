@@ -18,6 +18,7 @@ class TouristAccountFragment : Fragment() {
 
     //fragment binding
     private lateinit var binding: FragmentTouristAccountBinding
+
     private lateinit var touristName:String
 
     override fun onCreateView(
