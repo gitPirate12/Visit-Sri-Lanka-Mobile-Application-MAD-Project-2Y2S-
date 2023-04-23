@@ -67,7 +67,7 @@ class ShareYourExperiencesFragment : Fragment() {
             nameOfThePlace=binding.nameOfThePlace.text.toString()
             location=binding.localtion.text.toString()
             description=binding.experience.text.toString()
-            
+
             //passing data to save inside database
             saveExperienceDataInDatabase(touristName,nameOfThePlace,location,description,upload,postingDay,postingTime)
 
@@ -106,7 +106,8 @@ class ShareYourExperiencesFragment : Fragment() {
 
         //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         //how to access drawable folder from fragment
-        binding.experiencesUploadsImageView.setImageDrawable(R.drawable.baseline_upload_file_24)
+        var myDrawable= activity?.resources?.getDrawable(R.drawable.baseline_upload_file_24)
+        binding.experiencesUploadsImageView.setImageDrawable(myDrawable)
         //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     }//end function resetInputFieldsAfterSubmission
 
@@ -136,7 +137,9 @@ class ShareYourExperiencesFragment : Fragment() {
     }//end val ActivityResultLauncher
 
 }
-
+/*
 private fun ImageView.setImageDrawable(baselineUploadFile24: Int) {
 
 }
+
+ */
