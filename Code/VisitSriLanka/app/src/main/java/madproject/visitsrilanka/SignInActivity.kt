@@ -51,8 +51,7 @@ class SignInActivity : AppCompatActivity() {
                     Toast.makeText(this,"Just check your credentials again",Toast.LENGTH_SHORT).show()
                 }//end else
             }.addOnFailureListener {
-                Toast.makeText(this,"No user exists",Toast.LENGTH_SHORT).show()
-                Toast.makeText(this,"Just check your credentials again",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Query Execution Unsuccessful!!!",Toast.LENGTH_SHORT).show()
             }
 
         }//end method setOnClickListener
