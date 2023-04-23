@@ -32,11 +32,18 @@ class SignInActivity : AppCompatActivity() {
                     var appUserStatus=it.child("appUserStatus").value
 
                     //moving activities according to user status
-                    moveActivityAccordingtoUserStatus(appUserStatus.toString(),appUserEmail.toString())
+                    if(appUserPassword==userPassword){
+                        //check whether user entered password and firebase stored password are same
+                        moveActivityAccordingtoUserStatus(appUserStatus.toString(),appUserEmail.toString())
+                        //reset input fields
+                        resetEditTextsFieldsAfterSubmission()
+
+                    }//end if
+                    else{
+                        Toast.makeText(this,"Check Your Password Again",Toast.LENGTH_SHORT).show()
+                    }//end else
 
 
-                    //reset input fields
-                    resetEditTextsFieldsAfterSubmission()
 
                 }//end if
                 else{
@@ -56,7 +63,6 @@ class SignInActivity : AppCompatActivity() {
 
             val moveToTouristMainActivity= Intent(this,TouristMainActivity::class.java)
             moveToTouristMainActivity.putExtra("touristEmail",appUserEmail.toString())
-            Toast.makeText(this,"Not null ${appUserEmail.toString()}",Toast.LENGTH_SHORT).show()
             startActivity(moveToTouristMainActivity)
         }//end if
         else{
@@ -64,6 +70,7 @@ class SignInActivity : AppCompatActivity() {
             val moveToOtherUsersMainActivity=Intent(this,OtherUsersMainActivity::class.java)
             startActivity(moveToOtherUsersMainActivity)
         }//end else
+
     }//end function moveActivityAccordingtoUserStatus
 
     private fun resetEditTextsFieldsAfterSubmission(){

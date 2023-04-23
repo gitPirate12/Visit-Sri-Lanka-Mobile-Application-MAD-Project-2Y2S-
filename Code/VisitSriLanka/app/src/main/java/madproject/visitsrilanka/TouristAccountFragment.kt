@@ -8,9 +8,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.fragment_tourist_account.*
+import madproject.visitsrilanka.databinding.FragmentTouristAccountBinding
 
 
 class TouristAccountFragment : Fragment() {
+
+    private lateinit var binding: FragmentTouristAccountBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -18,36 +21,31 @@ class TouristAccountFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
 
+
+        //fragment binding
+        binding=FragmentTouristAccountBinding.inflate(layoutInflater)
+        return binding.root
+    }//end method onCreateView
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         //get values passed by bundle
         var bundle=arguments
         var touristEmail=bundle?.getString("touristEmail")
         //var touristEmail= this.arguments?.getString("touristEmail")
 
         if(touristEmail!=null){
-
-            var touristEmailTextView= view?.findViewById<TextView>(R.id.touristEmailTextView)
-            if (touristEmailTextView != null) {
-                touristEmailTextView.text=touristEmail
-            }//end if
-            else{
-                Toast.makeText(activity,"cannot access view",Toast.LENGTH_SHORT).show()
-            }//end else
-
-
-           // touristEmailTextView.text = touristEmail
-
-            Toast.makeText(activity,"touristEmail($touristEmail) is exists",Toast.LENGTH_SHORT).show()
+            
+            Toast.makeText(activity,"touristEmail $touristEmail recieved by fragment",Toast.LENGTH_SHORT).show()
+            binding.touristEmailTextView.text=touristEmail
         }//end if
         else{
-
             Toast.makeText(activity,"touristEmail is not Exists",Toast.LENGTH_SHORT).show()
         }//end else
 
-        //touristEmailTextView.text = touristEmail
 
-
-        return inflater.inflate(R.layout.fragment_tourist_account, container, false)
-    }
+    }//end method onViewCreated
 
 
 }
