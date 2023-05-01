@@ -64,13 +64,24 @@ class ShareYourExperiencesFragment : Fragment() {
 
         binding.shareExperienceButton.setOnClickListener {
 
-            nameOfThePlace=binding.nameOfThePlace.text.toString()
-            location=binding.localtion.text.toString()
-            description=binding.experience.text.toString()
+            if(validate()) {
 
-            //passing data to save inside database
-            saveExperienceDataInDatabase(touristName,nameOfThePlace,location,description,upload,postingDay,postingTime)
+                nameOfThePlace = binding.nameOfThePlace.text.toString()
+                location = binding.localtion.text.toString()
+                description = binding.experience.text.toString()
 
+                //passing data to save inside database
+                saveExperienceDataInDatabase(
+                    touristName,
+                    nameOfThePlace,
+                    location,
+                    description,
+                    upload,
+                    postingDay,
+                    postingTime
+                )
+
+            }//end if
         }//end method setOnClickListener
 
         binding.uploadSomePicturesButton.setOnClickListener {
@@ -137,5 +148,25 @@ class ShareYourExperiencesFragment : Fragment() {
 
 
     }//end val ActivityResultLauncher
+
+    private fun validate():Boolean{
+
+        if(binding.nameOfThePlace.text.isEmpty()){
+            binding.nameOfThePlace.error="Name of the Place is Required!!!"
+            return false
+        }//end if
+
+        if(binding.localtion.text.isEmpty()){
+            binding.localtion.error="Location is Required!!!"
+            return false
+        }//end if
+
+        if(binding.experience.text.isEmpty()){
+            binding.experience.error="Experience is Required!!!"
+            return false
+        }//end if
+
+        return true
+    }//end function validate
 
 }
