@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import kotlinx.android.synthetic.main.activity_create_account_as_tourist.*
 import kotlinx.android.synthetic.main.activity_sign_in.*
 
 class SignInActivity : AppCompatActivity() {
@@ -16,44 +17,55 @@ class SignInActivity : AppCompatActivity() {
         lateinit var database: DatabaseReference
         signInButton.setOnClickListener {
 
-            var userPassword=signinUserPassword.text.toString()
-            var userEmail=signinUserEmail.text.toString()
+            if(validateInput()) {
 
-            var formattedUserEmail=userEmail.split(".").toTypedArray()
+                var userPassword = signinUserPassword.text.toString()
+                var userEmail = signinUserEmail.text.toString()
 
-            //create database reference
-            database=FirebaseDatabase.getInstance().getReference("AppUsers")
-            database.child(formattedUserEmail[0]).get().addOnSuccessListener {
+                var formattedUserEmail = userEmail.split(".").toTypedArray()
 
-                if(it.exists()){
+                //create database reference
+                database = FirebaseDatabase.getInstance().getReference("AppUsers")
+                database.child(formattedUserEmail[0]).get().addOnSuccessListener {
 
-                    var appUserEmail=it.child("appUserEmail").value
-                    var appUserPassword=it.child("appUserPassword").value
-                    var appUserStatus=it.child("appUserStatus").value
+                    if (it.exists()) {
 
-                    //moving activities according to user status
-                    if(appUserPassword==userPassword){
-                        //check whether user entered password and firebase stored password are same
-                        moveActivityAccordingtoUserStatus(appUserStatus.toString(),appUserEmail.toString())
-                        //reset input fields
-                        resetEditTextsFieldsAfterSubmission()
+                        var appUserEmail = it.child("appUserEmail").value
+                        var appUserPassword = it.child("appUserPassword").value
+                        var appUserStatus = it.child("appUserStatus").value
+
+                        //moving activities according to user status
+                        if (appUserPassword == userPassword) {
+                            //check whether user entered password and firebase stored password are same
+                            moveActivityAccordingtoUserStatus(
+                                appUserStatus.toString(),
+                                appUserEmail.toString()
+                            )
+                            //reset input fields
+                            resetEditTextsFieldsAfterSubmission()
+
+                        }//end if
+                        else {
+                            Toast.makeText(this, "Check Your Password Again", Toast.LENGTH_SHORT)
+                                .show()
+                        }//end else
+
 
                     }//end if
-                    else{
-                        Toast.makeText(this,"Check Your Password Again",Toast.LENGTH_SHORT).show()
+                    else {
+                        Toast.makeText(this, "No user exists", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            this,
+                            "Just check your credentials again",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }//end else
+                }.addOnFailureListener {
+                    Toast.makeText(this, "Query Execution Unsuccessful!!!", Toast.LENGTH_SHORT)
+                        .show()
+                }
 
-
-
-                }//end if
-                else{
-                    Toast.makeText(this,"No user exists",Toast.LENGTH_SHORT).show()
-                    Toast.makeText(this,"Just check your credentials again",Toast.LENGTH_SHORT).show()
-                }//end else
-            }.addOnFailureListener {
-                Toast.makeText(this,"Query Execution Unsuccessful!!!",Toast.LENGTH_SHORT).show()
-            }
-
+            }//end if
         }//end method setOnClickListener
     }//end method onCreate()
 
@@ -76,4 +88,27 @@ class SignInActivity : AppCompatActivity() {
         signinUserEmail.text.clear()
         signinUserPassword.text.clear()
     }//end function resetEditTextsFieldsAfterSubmission
+
+    private fun validateInput():Boolean{
+
+        //validate email
+        if(signinUserEmail.text.isEmpty()){
+            signinUserEmail.error="Email is Required!!!"
+            return false
+        }//end if
+
+        val emailValidator="^(([^<>()\\[\\]\\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@\"]+)*)|(\".+\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))\$".toRegex()
+        if(!emailValidator.matches(signinUserEmail.text.toString())){
+            signinUserEmail.error="Enter valid Email!!!"
+            return false
+        }//end if
+
+        //validate password
+        if(signinUserPassword.text.isEmpty()){
+            signinUserPassword.error="Password is Required!!!"
+            return false
+        }//end if
+
+        return true;
+    }//end function validateInput()
 }
