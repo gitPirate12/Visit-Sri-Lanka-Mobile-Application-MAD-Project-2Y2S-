@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -20,6 +19,9 @@ class TouristAccountFragment : Fragment() {
     private lateinit var binding: FragmentTouristAccountBinding
 
     private lateinit var touristName:String
+    private lateinit var touristsEmail:String
+    private lateinit var touristCountry:String
+    private lateinit var touristContactNumber:String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -54,9 +56,9 @@ class TouristAccountFragment : Fragment() {
 
                 if(it.exists()){
                     touristName=it.child("touristName").value.toString()
-                    var touristEmail=it.child("touristEmail").value.toString()
-                    var touristCountry=it.child("touristCountry").value.toString()
-                    var touristContactNumber=it.child("touristContactNumber").value.toString()
+                    touristsEmail=it.child("touristEmail").value.toString()
+                    touristCountry=it.child("touristCountry").value.toString()
+                    touristContactNumber=it.child("touristContactNumber").value.toString()
                     var touristPassword=it.child("touristPassword").value.toString()
                     var touristProfilePicture=it.child("touristProfilePicture").value.toString()
 
@@ -84,6 +86,11 @@ class TouristAccountFragment : Fragment() {
         }//end method setOnClickListener
 
 
+        //open edit tourist account fragment when press 'editProfileButton'
+        binding.editProfileButton.setOnClickListener {
+
+            moveToEditTouristAccountFragment(touristName,touristsEmail,touristCountry,touristContactNumber)
+        }
 
 
 
@@ -116,6 +123,8 @@ class TouristAccountFragment : Fragment() {
         var myBundle=Bundle()
         myBundle.putString("touristName",touristName)
         shareYourExperiencesFragment.arguments=myBundle
+
+        //moving function
         activity?.supportFragmentManager?.beginTransaction()?.apply {
             replace(R.id.fragmentContainerView,shareYourExperiencesFragment)
             commit()
@@ -123,5 +132,28 @@ class TouristAccountFragment : Fragment() {
 
 
     }//end function moveToShareMyExperiencesFragment
+
+    private fun moveToEditTouristAccountFragment(name:String,email:String,country:String,contactNumber:String){
+
+        //create object of EditTouristAccountFragment
+        var editTouristAccountFragment=EditTouristAccountFragment()
+
+        //passing some data using bundle with editTouristAccountFragment
+        var myBundle=Bundle()
+        myBundle.putString("touristName",name)
+        myBundle.putString("touristEmail",email)
+        myBundle.putString("touristContactNumber",contactNumber)
+        myBundle.putString("touristCountry",country)
+
+        editTouristAccountFragment.arguments=myBundle
+
+        //moving function
+        activity?.supportFragmentManager?.beginTransaction()?.apply {
+            replace(R.id.fragmentContainerView,editTouristAccountFragment)
+            commit()
+        }
+
+
+    }//end function moveToEditTouristAccountFragment
 
 }
