@@ -33,16 +33,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="01st Monday 03 2023"
+                android:text="Date"
                 android:textSize="15sp"
                 android:textColor="#d279a6" />
             <TextView
                 android:id="@+id/postedTimeTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="03:45 AM"
                 android:layout_marginTop="5dp"
                 android:textSize="15sp"
+                android:text="Time"
                 android:textColor="#d279a6"/>
         </LinearLayout>
         <LinearLayout
@@ -64,7 +64,7 @@
                 android:id="@+id/descriptionTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:text="Last monday we want to visit Sri Dalada Maligawa. We left from our residence at 2.30 AM. Actually it was best ever trip I had"
                 />
         </LinearLayout>

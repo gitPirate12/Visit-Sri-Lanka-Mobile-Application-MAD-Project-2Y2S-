@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.icu.text.SimpleDateFormat
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -13,6 +14,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -20,6 +22,8 @@ import kotlinx.android.synthetic.main.activity_create_account_as_tourist.*
 import madproject.visitsrilanka.databinding.FragmentShareYourExperiencesBinding
 import java.io.ByteArrayOutputStream
 import java.util.Calendar
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 
 class ShareYourExperiencesFragment : Fragment() {
@@ -55,6 +59,7 @@ class ShareYourExperiencesFragment : Fragment() {
         return binding.root
     }//end method onCreateView
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

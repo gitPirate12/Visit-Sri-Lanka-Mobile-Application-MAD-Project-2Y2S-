@@ -30,8 +30,8 @@ class ExperienceAdapter(private val allTouristsExperiencesObject:ArrayList<Touri
 
         //set values coming from firebase to 'tourist_experience' caed view
         holder.touristName_placeName_location_TextView.text="${currentExperience.touristName} \n@ ${currentExperience.nameOfThePlace}, ${currentExperience.location}."
-        holder.postedDateTextView.setText(currentExperience.postingDate.toString())
-        holder.postedTimeTextView.setText(currentExperience.postingTime.toString())
+        holder.postedDateTextView.text = currentExperience.date
+        holder.postedTimeTextView.text = currentExperience.time
         if(currentExperience.upload!=null){
             holder.experiencePhotoImageView.setImageBitmap(createImageBitMap((currentExperience.upload)))
         }//end if

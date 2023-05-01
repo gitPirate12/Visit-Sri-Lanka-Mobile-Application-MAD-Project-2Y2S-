@@ -18,7 +18,7 @@ class VisitExperiencesFragment : Fragment() {
     private lateinit var experiencesArrayList:ArrayList<TouristExperience>
 
     //fragment binding
-    private lateinit var binding: FragmentVisitExperiencesBinding
+    private lateinit var binding:FragmentVisitExperiencesBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
