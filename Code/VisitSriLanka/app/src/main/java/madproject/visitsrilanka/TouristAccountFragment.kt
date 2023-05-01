@@ -93,6 +93,10 @@ class TouristAccountFragment : Fragment() {
         }
 
 
+        binding.moveToDeleteFragmentButton.setOnClickListener {
+            moveToDeleteAccountFragment(touristsEmail)
+        }
+
 
     }//end method onViewCreated
 
@@ -156,4 +160,22 @@ class TouristAccountFragment : Fragment() {
 
     }//end function moveToEditTouristAccountFragment
 
+
+    private fun moveToDeleteAccountFragment(email:String){
+
+        //create fragment object
+        var deleteToursitAccountFragment=DeleteToursitAccountFragment()
+
+        //create bundle object and attach data
+        var myBundle=Bundle()
+        myBundle.putString("touristEmail",email)
+        deleteToursitAccountFragment.arguments=myBundle
+
+        //moving to deleteTouristAccountFragment
+        activity?.supportFragmentManager?.beginTransaction()?.apply {
+            replace(R.id.fragmentContainerView,deleteToursitAccountFragment)
+            commit()
+        }
+
+    }//end function moveToDeleteAccountFragment
 }
