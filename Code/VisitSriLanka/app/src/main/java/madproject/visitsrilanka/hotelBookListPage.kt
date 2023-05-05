@@ -1,40 +1,40 @@
 package madproject.visitsrilanka
 
+
 import android.content.Intent
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
 
-class HotelsAndRestaurentsFragment : Fragment() {
-    private lateinit var DBref: DatabaseReference
-    private lateinit var hotelRecycle: RecyclerView
-    private lateinit var hotelArrayList: ArrayList<HotelData>
+
+class hotelBookListPage : AppCompatActivity() {
+
+
+        private lateinit var DBref: DatabaseReference
+        private lateinit var hotelRecycle: RecyclerView
+        private lateinit var hotelArrayList:ArrayList<HotelData>
     private val filteredHotelList = ArrayList<HotelData>()
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_hotels_and_restaurents, container, false)
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_hotel_book_list_page)
 
-        hotelRecycle = view.findViewById(R.id.hotelListRecycle)
-        hotelRecycle.layoutManager = LinearLayoutManager(requireContext())
-        hotelRecycle.setHasFixedSize(true)
+            hotelRecycle =findViewById(R.id.hotelListRecycle)
+            hotelRecycle.layoutManager= LinearLayoutManager(this)
+            hotelRecycle.setHasFixedSize(true)
 
-        hotelArrayList = arrayListOf()
-        getHotelData()
+            hotelArrayList= arrayListOf<HotelData>()
+            getHotelData();
 
-        return view
-    }
 
-        fun getHotelData() {
+
+
+        }
+
+        private fun getHotelData() {
             DBref= FirebaseDatabase.getInstance().getReference("Hotel")
             DBref.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
@@ -48,7 +48,7 @@ class HotelsAndRestaurentsFragment : Fragment() {
 
                         mAdaptor.setOnItemClickListener(object :hotelListAdapter.onItemClickListener{
                             override fun onItemClick(position: Int) {
-                                val intent= Intent(requireActivity(), hotelItemBook::class.java)
+                                val intent= Intent(this@hotelBookListPage,hotelItemBook::class.java)
 
                                 intent.putExtra("hotelName",hotelArrayList[position].hotelName)
                                 intent.putExtra("hotelAddress",hotelArrayList[position].hotelAddress)
@@ -81,6 +81,4 @@ class HotelsAndRestaurentsFragment : Fragment() {
         }
 
     }
-
-
 

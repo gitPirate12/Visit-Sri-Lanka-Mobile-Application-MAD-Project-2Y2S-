@@ -57,6 +57,13 @@
     <dimen name="mtaEditButtonPadding">15dp</dimen>
     <dimen name="mtaEditButtonWidth">150dp</dimen>
     <dimen name="mtaSignOutButtonMarginLeft">40dp</dimen>
+    <dimen name="HR_title">34sp</dimen>
+    <dimen name="HR_items"> 16sp</dimen>
+    <dimen name="HR_listNames">21sp</dimen>
+    <dimen name="hotelbookingtitle">40dp</dimen>
+    <dimen name="hotelbooking_itemsize">20sp</dimen>
+    <dimen name="Hotelloging_titleSize">40sp</dimen>
+    <dimen name="hotellogin_itemsize">20sp</dimen>
 
 
 </resources>

@@ -10,7 +10,7 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
         android:name="madproject.visitsrilanka.VisitExperiencesFragment"
-        tools:layout="@layout/fragment_share_my_experiences"
+        tools:layout="@layout/fragment_share_your_experiences"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="213dp"

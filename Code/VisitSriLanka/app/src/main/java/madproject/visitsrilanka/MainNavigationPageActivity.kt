@@ -24,6 +24,10 @@ class MainNavigationPageActivity : AppCompatActivity() {
             startActivity(moveToSignInActivity)
 
         }//end method setOnClickListener
+        hotelRegistrationButton.setOnClickListener{
+            val hotelRegNav=Intent(this,Hotel_reg_nav::class.java)
+            startActivity(hotelRegNav)
+        }
 
 
     }//end method onCreate
