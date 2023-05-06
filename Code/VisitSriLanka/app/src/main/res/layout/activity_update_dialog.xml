@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
+    android:background="@color/SubMainBackgroundColor"
+    android:orientation="vertical"
+
+    android:padding="10dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hotel Name"
+        android:textSize="20dp"
+        android:textColor="@color/FontColor"></TextView>
+
+    <EditText
+        android:id="@+id/hotelName"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/mrtInputFieldColor"
+
+
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Hotel Address"
+        android:textSize="20dp"
+        android:textColor="@color/FontColor"></TextView>
+
+    <EditText
+        android:id="@+id/hotelAddress"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/mrtInputFieldColor"
+
+        android:ems="10" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Hotel Email"
+        android:textSize="20dp"
+        android:textColor="@color/FontColor"></TextView>
+
+    <EditText
+        android:id="@+id/hotelEmail"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/mrtInputFieldColor"
+
+        android:ems="10" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Phone"
+        android:textSize="20dp"
+        android:textColor="@color/FontColor"></TextView>
+
+    <EditText
+        android:id="@+id/hotelPhone"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/mrtInputFieldColor"
+
+        android:ems="10" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Price"
+        android:textSize="20dp"
+        android:textColor="@color/FontColor"
+
+    ></TextView>
+
+    <EditText
+        android:id="@+id/hotelPrice"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/mrtInputFieldColor"
+
+
+        android:ems="10"
+
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/FontColor"
+
+
+
+    android:text="District"
+        android:textSize="20dp"></TextView>
+
+    <EditText
+        android:id="@+id/hotelDistrict"
+        android:layout_width="match_parent"
+
+        android:background="@color/mrtInputFieldColor"
+        android:layout_height="40dp"
+        android:ems="10"
+
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnSelectImage"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="20px"
+            android:backgroundTint="@color/teal_700"
+            android:paddingLeft="10dp"
+            android:text="Upload" />
+
+        <ImageView
+            android:id="@+id/UploadsImageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="100px"
+            android:src="@drawable/baseline_upload_file_24" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnUpdateData"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/updatebuttonhotel"
+        android:text="Update Data" />
+
+
+</LinearLayout>
