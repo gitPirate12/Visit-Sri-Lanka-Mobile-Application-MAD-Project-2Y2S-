@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "397059399497",
+    "firebase_url": "https://visit-sri-lanka-a184c-default-rtdb.firebaseio.com",
+    "project_id": "visit-sri-lanka-a184c",
+    "storage_bucket": "visit-sri-lanka-a184c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:397059399497:android:22898842a1ef20ff0fc498",
+        "android_client_info": {
+          "package_name": "madproject.visitsrilanka"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "397059399497-0q736pvttnt7u46sa74nufm56dfn82r0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaXCkh3GMOlHcN-jdEZ9_ay87Gw9qcOW4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "397059399497-0q736pvttnt7u46sa74nufm56dfn82r0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

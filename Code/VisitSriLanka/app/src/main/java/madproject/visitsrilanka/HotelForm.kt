@@ -1,10 +1,8 @@
 package madproject.visitsrilanka
 
-import android.annotation.SuppressLint
+
 import android.app.Activity.RESULT_OK
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.text.TextUtils
@@ -14,22 +12,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.activity.result.ActivityResult
-import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.appcompat.app.AppCompatActivity
-import com.bumptech.glide.Glide
-
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import madproject.visitsrilanka.databinding.FragmentHotelFormBinding
-import java.io.ByteArrayOutputStream
-import java.net.URI
 
 
 class HotelForm : Fragment() {
+
     lateinit var hotelName: String
     lateinit var hotelAddress: String
     lateinit var hotelEmail: String
@@ -66,30 +58,7 @@ class HotelForm : Fragment() {
         var myBundle = arguments
         hotelName = myBundle?.getString("hotelName").toString()
 
-//        val activityResultLauncher=registerForActivityResult<Intent,ActivityResult>(
-//            ActivityResultContracts.StartActivityForResult()){result->
-//            if(result.resultCode==RESULT_OK){
-//                val data= result.data
-//                uri=data!!.data
-//                binding.UploadsImageView.setImageURI(uri)
-//
-//            }
-//
-//        }
-//        binding.uploadSomePicturesButton.setOnClickListener{
-//            val photoPicker=Intent(Intent.ACTION_PICK)
-//            photoPicker.type="image/*"
-//            activityResultLauncher.launch(photoPicker)
-//
-//        }
 
-
-//        binding.uploadSomePicturesButton.setOnClickListener {
-//
-//            var myFileIntent = Intent(Intent.ACTION_GET_CONTENT)
-//            myFileIntent.setType("image/*")
-//            ActivityResultLauncher.launch(myFileIntent)
-//        }
         binding.uploadSomePicturesButton.setOnClickListener {
             val myFileIntent = Intent(Intent.ACTION_GET_CONTENT)
             myFileIntent.setType("image/*")
@@ -108,6 +77,7 @@ class HotelForm : Fragment() {
             hotelDistrict = binding.hotelDistrict.text.toString()
 
 
+            //validating hotel reg inputs
             if (TextUtils.isEmpty(hotelName.toString())) {
                 Toast.makeText(activity, "Please Enter All Details", Toast.LENGTH_SHORT).show()
 
@@ -136,9 +106,7 @@ class HotelForm : Fragment() {
                 Toast.makeText(activity, "Please enter a valid email address", Toast.LENGTH_SHORT).show()
 
             }else
-
                 {
-
 
                     saveHotelInDatabase(
                         hotelName,

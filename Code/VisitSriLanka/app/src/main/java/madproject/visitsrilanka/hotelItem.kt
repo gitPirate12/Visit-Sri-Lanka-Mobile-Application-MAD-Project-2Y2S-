@@ -57,6 +57,8 @@ class hotelItem : AppCompatActivity() {
         }
 
     }
+
+    //delete selected records
     private fun deleteRecord(
         hotelName: String
     ){
@@ -101,17 +103,6 @@ class hotelItem : AppCompatActivity() {
             .load(hotelImageUrl)
             .into(hotelListImagetv)
 
-
-
-
-
-
-
-
-    }
-    private fun createImageBitmap(imageData: String?): Bitmap {
-        val bytes = android.util.Base64.decode(imageData, android.util.Base64.DEFAULT)
-        return BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
     }
 
     private fun openUpdateDialog(
@@ -145,10 +136,6 @@ class hotelItem : AppCompatActivity() {
         Glide.with(this)
             .load(hotelImageUrl)
             .into(UploadsImageView)
-
-
-
-
 
 
         val alertDialog=mDialog.create()
