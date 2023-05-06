@@ -1,13 +1,11 @@
 package madproject.visitsrilanka
 
 import android.net.Uri
-import androidx.lifecycle.Lifecycle
 import madproject.visitsrilanka.databinding.FragmentHotelFormBinding
 import org.hamcrest.CoreMatchers.*
 import org.hamcrest.MatcherAssert.assertThat
-import org.junit.Before
 import org.junit.Test
-import org.junit.runner.RunWith
+
 
 class HotelFormTest {
 
