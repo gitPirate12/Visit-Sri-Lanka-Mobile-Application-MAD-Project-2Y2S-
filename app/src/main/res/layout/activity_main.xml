@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_img"
+    android:background="@drawable/bg2"
     tools:context=".MainActivity">
 
 
@@ -36,36 +36,46 @@
 
 
         <Button
-            android:id="@+id/button9"
+            android:id="@+id/DeleteDriverBtn"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_row="0"
             android:layout_column="0"
             android:layout_marginEnd="6dp"
-            android:text="@string/login"
-            android:textStyle="bold" />
+            android:text="Delete Driver "
+            android:textStyle="bold"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            app:icon="@drawable/ic_delete" />
+
 
         <Button
-            android:id="@+id/button8"
+            android:id="@+id/editProfileBtn"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:text="@string/edit_profile"
-            android:textStyle="bold" />
+            android:text="Edit Profile"
+            android:textStyle="bold"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            app:icon="@drawable/ic_edit"/>
 
         <Button
-            android:id="@+id/button7"
+            android:id="@+id/MainmenuRegisterBtn"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:text="@string/register"
-            android:textStyle="bold" />
+            android:text="      Register"
+            android:textStyle="bold"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            app:icon="@drawable/ic_register"/>
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/findDriverBtn"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:text="@string/book_now"
-            android:textStyle="bold" />
+            android:text="Find Driver"
+            android:textStyle="bold"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            app:icon="@drawable/ic_find"/>
     </GridLayout>
+
 
     <TextView
         android:id="@+id/textView3"

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "662125920895",
+    "firebase_url": "https://chauffeurapp-ea4b6-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "chauffeurapp-ea4b6",
+    "storage_bucket": "chauffeurapp-ea4b6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:662125920895:android:f1ee0be67a8d4174b9b54a",
+        "android_client_info": {
+          "package_name": "com.example.chauffeurapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "662125920895-rbgjl9fjtmr4q702aoksgfblgk6939sl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTj_YABId2_ouYclMW0t7IIgf9vjyj4Po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "662125920895-rbgjl9fjtmr4q702aoksgfblgk6939sl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

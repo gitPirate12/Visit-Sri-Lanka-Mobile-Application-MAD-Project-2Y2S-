@@ -21,4 +21,6 @@
     <string name="login">Login</string>
     <string name="edit_profile">Edit Profile</string>
     <string name="main_menu">Main Menu</string>
+    <string name="title_activity_show_drivers">ShowDrivers</string>
+    <string name="get_driver_details">Get Driver Details</string>
 </resources>

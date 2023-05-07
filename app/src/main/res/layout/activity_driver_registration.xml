@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_img"
+    android:background="@drawable/bg2"
     tools:context=".MainActivity">
 
 
@@ -59,6 +59,7 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dname"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="6dp"
@@ -66,6 +67,7 @@
                 android:paddingEnd="6dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dName_et"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
@@ -79,12 +81,14 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dmail"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingStart="6dp"
                 android:paddingEnd="6dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dMail_et"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
@@ -96,12 +100,14 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dphone"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingStart="6dp"
                 android:paddingEnd="6dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dPhone_et"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
@@ -113,15 +119,17 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dpass"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="6dp"
                 android:layout_marginBottom="6dp"
                 android:paddingStart="6dp"
-                android:paddingEnd="6dp"
+                android:paddingEnd="0dp"
                 app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dPass_et"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
@@ -136,15 +144,17 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dconpass"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="6dp"
                 android:layout_marginBottom="16dp"
                 android:paddingStart="6dp"
-                android:paddingEnd="6dp"
+                android:paddingEnd="0dp"
                 app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dConPass_et"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
@@ -153,7 +163,8 @@
                     android:drawableStart="@drawable/ic_password"
                     android:drawablePadding="6dp"
                     android:hint="@string/confirm_password"
-                    android:inputType="textPassword" />
+                    android:inputType="textPassword"
+                    tools:visibility="visible" />
 
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -162,7 +173,7 @@
     </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/registerBtn"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:background="@drawable/login_btn_bg"
