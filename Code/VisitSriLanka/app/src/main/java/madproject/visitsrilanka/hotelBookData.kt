@@ -7,5 +7,6 @@ data class hotelBookData(
     var hotelPrice : String?=null,
     var CustomerName : String?=null,
     var BookDays:String?=null,
+    var hotelBookTotal:String?=null
 
 )
