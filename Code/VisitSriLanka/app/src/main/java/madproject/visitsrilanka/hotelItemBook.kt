@@ -5,6 +5,8 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import com.bumptech.glide.Glide
@@ -95,6 +97,7 @@ class hotelItemBook : AppCompatActivity() {
         val hotelPhone=mDialogView.findViewById<TextView>(R.id.hotelPhone)
         val hotelPrice=mDialogView.findViewById<TextView>(R.id.hotelPrice)
         val BookDays=mDialogView.findViewById<EditText>(R.id.BookDays)
+        val hotelBookTotal=mDialogView.findViewById<TextView>(R.id.hotelBookTotal)
 
 
         val btnUpdateData=mDialogView.findViewById<Button>(R.id.btnUpdateData)
@@ -107,16 +110,28 @@ class hotelItemBook : AppCompatActivity() {
         hotelPhone.setText(intent.getStringExtra("hotelPhone").toString())
         hotelPrice.setText(intent.getStringExtra("hotelPrice").toString())
 
+        BookDays.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+                val days = BookDays.text.toString().toIntOrNull() ?: 0
+                val price = hotelPrice.text.toString().toIntOrNull() ?: 0
+                val totalPrice = days * price
+                hotelBookTotal.text = totalPrice.toString()
 
 
+            }
 
-
-
+        })
 
         val alertDialog=mDialog.create()
         alertDialog.show()
-
-
 
         btnUpdateData.setOnClickListener {
             Resrevation(
@@ -126,6 +141,7 @@ class hotelItemBook : AppCompatActivity() {
                 hotelPrice.text.toString(),
                 CustomerName.text.toString(),
                 BookDays.text.toString(),
+                hotelBookTotal.text.toString()
 
             )
             Toast.makeText(applicationContext,"Reservation Complete", Toast.LENGTH_LONG).show()
@@ -145,11 +161,12 @@ class hotelItemBook : AppCompatActivity() {
         hotelPrice:String,
         CustomerName:String,
        BookDays:String,
+        hotelBookTotal:String
 
     ){
 
         val dbRef= FirebaseDatabase.getInstance().getReference("Hotel_Book").child(CustomerName)
-        val hoteldata=hotelBookData(hotelName,hotelAddress,hotelPhone,hotelPrice,CustomerName,BookDays)
+        val hoteldata=hotelBookData(hotelName,hotelAddress,hotelPhone,hotelPrice,CustomerName,BookDays,hotelBookTotal)
         dbRef.setValue(hoteldata)
 
     }

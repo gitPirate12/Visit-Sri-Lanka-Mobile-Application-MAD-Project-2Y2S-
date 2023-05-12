@@ -115,6 +115,22 @@
         android:inputType="number"
 
         />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Total"
+        android:textColor="@color/FontColor"
+        android:textSize="@dimen/HR_listNames"></TextView>
+    <TextView
+        android:id="@+id/hotelBookTotal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textSize="20sp"
+        android:textColor="@color/FontColor"
+
+
+        />
 
 
     <Button
