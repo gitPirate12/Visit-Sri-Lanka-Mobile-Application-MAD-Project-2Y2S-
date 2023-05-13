@@ -13,11 +13,15 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.drawToBitmap
 import com.bumptech.glide.Glide
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.StorageReference
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.database.DatabaseReference
 
 
 
@@ -34,6 +38,7 @@ class hotelItem : AppCompatActivity() {
     private lateinit var hotelListDistricttv: TextView
     private lateinit var btnUpdate:Button
     private lateinit var btnDelete:Button
+    private lateinit var storageReference: StorageReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -112,6 +117,7 @@ class hotelItem : AppCompatActivity() {
         val inflater=layoutInflater
         val mDialogView= inflater.inflate(R.layout.activity_update_dialog,null)
         mDialog.setView(mDialogView)
+        storageReference = FirebaseStorage.getInstance().reference
 
         val hotelName=mDialogView.findViewById<EditText>(R.id.hotelName)
         val hotelAddress=mDialogView.findViewById<EditText>(R.id.hotelAddress)
@@ -123,6 +129,7 @@ class hotelItem : AppCompatActivity() {
         val btnSelectImage = mDialogView.findViewById<Button>(R.id.btnSelectImage)
 
         val btnUpdateData=mDialogView.findViewById<Button>(R.id.btnUpdateData)
+
 
 
 
@@ -141,9 +148,11 @@ class hotelItem : AppCompatActivity() {
         val alertDialog=mDialog.create()
         alertDialog.show()
         btnSelectImage.setOnClickListener {
-            val intent = Intent(Intent.ACTION_PICK)
-            intent.type = "image/*"
-            startActivityForResult(intent, 1)
+
+                val myFileIntent = Intent(Intent.ACTION_GET_CONTENT)
+                myFileIntent.setType("image/*")
+                resultLauncher.launch(myFileIntent)
+
         }
 
 
@@ -156,6 +165,8 @@ class hotelItem : AppCompatActivity() {
                 hotelPrice.text.toString(),
                 hotelDistrict.text.toString(),
                 hotelImageUrl.toString()
+
+
             )
             Toast.makeText(applicationContext,"Data Updated",Toast.LENGTH_LONG).show()
 
@@ -198,5 +209,41 @@ class hotelItem : AppCompatActivity() {
 
 
     }
+    private val resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == RESULT_OK) {
+            val data = result.data
+            var hotelImageUrl:String?;
+            if (data != null && data.data != null) {
+                val imageUri = data.data
+                if (imageUri != null) {
+                    val imageRef = storageReference.child("hotelImages/${System.currentTimeMillis()}.jpg")
+                    val uploadTask = imageRef.putFile(imageUri)
+                    uploadTask.addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            imageRef.downloadUrl.addOnSuccessListener { uri ->
+                                hotelImageUrl= uri.toString()
+                                Toast.makeText(this, "upload image complete", Toast.LENGTH_SHORT).show()
+
+
+                            }.addOnFailureListener { exception ->
+                                Toast.makeText(this, "Failed to upload image: ${exception.message}", Toast.LENGTH_SHORT).show()
+                            }
+                        } else {
+                            Toast.makeText(this, "Failed to upload image: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                } else {
+                    Toast.makeText(this, "Failed to get image URI", Toast.LENGTH_SHORT).show()
+                }
+            }
+            else {
+                Toast.makeText(this, "Failed to get image data", Toast.LENGTH_SHORT).show()
+            }
+
+
+        }
+
+    }
+
 
 }
