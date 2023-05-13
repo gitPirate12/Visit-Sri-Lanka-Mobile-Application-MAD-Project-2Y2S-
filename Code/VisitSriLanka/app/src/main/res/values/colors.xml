@@ -10,6 +10,17 @@
 
 
 
+
+
+
+
+    <color name="start_color">#ee9ca7</color>
+    <color name="end_color">#6DD5FA</color>
+    <color name="powder_blue">#B6D0E2</color>
+    <color name="blue">#0000FF</color>
+    <color name="light_gray">#D3D3D3</color>
+
+
     <!--Visit Sri Lanka Mobile Application-->
     <!--My Interfaces(IT21177514)-->
     <color name="mrtMainBackgroundColor">#FFDD99</color>
