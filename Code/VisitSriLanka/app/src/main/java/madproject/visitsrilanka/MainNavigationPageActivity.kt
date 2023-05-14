@@ -3,7 +3,6 @@ package madproject.visitsrilanka
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main_navigation_page.*
 
 class MainNavigationPageActivity : AppCompatActivity() {
@@ -24,11 +23,21 @@ class MainNavigationPageActivity : AppCompatActivity() {
             startActivity(moveToSignInActivity)
 
         }//end method setOnClickListener
+
         hotelRegistrationButton.setOnClickListener{
             val hotelRegNav=Intent(this,Hotel_reg_nav::class.java)
             startActivity(hotelRegNav)
         }
 
+        tourDriverRegistrationButton.setOnClickListener{
+            val driverMenuNav=Intent(this,DriverMainMenu::class.java)
+            startActivity(driverMenuNav)
+        }
 
+
+        tourGuideRegistrationButton.setOnClickListener{
+            val guidemain=Intent(this,guidemainpage::class.java)
+            startActivity(guidemain)
+        }
     }//end method onCreate
 }
