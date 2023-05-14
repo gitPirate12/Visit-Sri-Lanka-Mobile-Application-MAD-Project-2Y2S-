@@ -1,16 +1,24 @@
 package madproject.visitsrilanka
 
 import android.net.Uri
+import android.view.LayoutInflater
 import madproject.visitsrilanka.databinding.FragmentHotelFormBinding
 import org.hamcrest.CoreMatchers.*
 import org.hamcrest.MatcherAssert.assertThat
+import org.junit.Before
 import org.junit.Test
+import androidx.test.core.app.ApplicationProvider
 
 
 class HotelFormTest {
 
 
     private lateinit var binding: FragmentHotelFormBinding
+    @Before
+    fun set(){
+
+        binding=FragmentHotelFormBinding.inflate(LayoutInflater.from(ApplicationProvider.getApplicationContext()))
+    }
 
 
 
