@@ -29,6 +29,11 @@ class MainNavigationPageActivity : AppCompatActivity() {
             startActivity(hotelRegNav)
         }
 
+        tourDriverRegistrationButton.setOnClickListener{
+            val driverMenuNav=Intent(this,DriverMainMenu::class.java)
+            startActivity(driverMenuNav)
+        }
+
 
         tourGuideRegistrationButton.setOnClickListener{
             val guidemain=Intent(this,guidemainpage::class.java)
