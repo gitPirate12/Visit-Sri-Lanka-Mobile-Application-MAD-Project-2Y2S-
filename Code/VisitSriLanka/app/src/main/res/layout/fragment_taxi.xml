@@ -3,15 +3,117 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TaxiFragment"
-    android:background="@color/purple_200">
+    android:background="@drawable/background">
 
-    <TextView
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg2"
+        android:scaleType="fitXY" />
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="This is Taxi Fragment"
-        android:textSize="40sp"
-        android:textStyle="bold"/>
+        android:layout_margin="20dp"
+        android:backgroundTint="@color/SubMainBackgroundColor"
+        android:elevation="8dp"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/backgrounddriver"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/driver_topic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:text="Book Driver"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/choose_driver_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:text="Choose Driver:"
+                android:textSize="24sp"
+                android:textStyle="normal" />
+
+            <Spinner
+                android:id="@+id/driver_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="66dp"
+                android:layout_marginTop="20dp"
+                android:spinnerMode="dropdown" />
+
+            <TextView
+                android:id="@+id/hourlycharge_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:text="Hourly Charge: 500rs"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/hoursNo_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:hint="Enter hours"
+                android:textSize="24sp" />
+
+
+            <Button
+                android:id="@+id/calcdriverchargeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:text="Calcuate Charge" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="30dp">
+
+                <TextView
+                    android:id="@+id/total_charge_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Charge: "
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/CalcualtedChargeTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/confirmDriverButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:text="Confirm Booking" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 
 </FrameLayout>
