@@ -12,6 +12,10 @@ class updateguide : AppCompatActivity() {
     private lateinit var binding: ActivityUpdateguideBinding
     private lateinit var database: DatabaseReference
 
+    fun isEmailValid(email: String): Boolean {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding=ActivityUpdateguideBinding.inflate(layoutInflater)

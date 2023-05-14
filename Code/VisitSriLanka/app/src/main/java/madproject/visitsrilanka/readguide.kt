@@ -21,7 +21,11 @@ class readguide : AppCompatActivity() {
             if (name.isNotEmpty()) {
                 readData(name)
             } else {
+                binding.searcguidename.error="Guide name is empty"
+                return@setOnClickListener
+
                 Toast.makeText(this, "pleast enter the user name ! ", Toast.LENGTH_SHORT).show()
+
 
             }
         }

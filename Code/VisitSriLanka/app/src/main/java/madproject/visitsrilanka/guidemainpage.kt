@@ -11,6 +11,13 @@ class guidemainpage : AppCompatActivity() {
         setContentView(R.layout.activity_guidemainpage)
         title="Guide menu"
 
+
+        val seeButton = findViewById<Button>(R.id.seeguidebutton)
+        seeButton.setOnClickListener {
+            val intent = Intent(this,guidedetail::class.java)
+            startActivity(intent)
+        }
+
         val myButton = findViewById<Button>(R.id.addguidebtn)
         myButton.setOnClickListener {
             val intent = Intent(this,guideregister::class.java)

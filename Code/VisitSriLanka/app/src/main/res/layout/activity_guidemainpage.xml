@@ -24,7 +24,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/seebutton"
+        android:id="@+id/seeguidebutton"
         android:layout_width="172dp"
         android:layout_height="100dp"
         android:text="See Guide"

@@ -38,7 +38,7 @@ class guideregister : AppCompatActivity() {
 
             //check
             if (name.isEmpty() || !name.matches(Regex("^[A-Z][a-zA-Z ]*[a-zA-Z]\$"))) {
-                binding.name.error = "Driver name is required and must start with a capital letter and contain only letters and spaces"
+                binding.name.error = "Guide name is required and must start with a capital letter and contain only letters and spaces"
                 return@setOnClickListener
             }
 
