@@ -44,32 +44,23 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:gravity="center"
-                android:text="Choose Driver:"
+                android:text="Choose Vehicle Class:"
                 android:textSize="24sp"
                 android:textStyle="normal" />
 
             <Spinner
-                android:id="@+id/driver_spinner"
+                android:id="@+id/vehicle_class_spinner"
                 android:layout_width="match_parent"
                 android:layout_height="66dp"
                 android:layout_marginTop="20dp"
                 android:spinnerMode="dropdown" />
-
-            <TextView
-                android:id="@+id/hourlycharge_TV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:gravity="center"
-                android:text="Hourly Charge: 500rs"
-                android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/hoursNo_ET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:hint="Enter hours"
+                android:hint="No of hrs required"
                 android:textSize="24sp" />
 
 
@@ -105,7 +96,7 @@
 
 
             <Button
-                android:id="@+id/confirmDriverButton"
+                android:id="@+id/confirm_booking_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
