@@ -49,73 +49,74 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.272"
-        android:drawableLeft="@drawable/baseline_search_24"/>
+        android:drawableLeft="@drawable/baseline_search_24"
+        android:background="@drawable/bookbuttonhotel"/>
 
     <TextView
         android:id="@+id/readname"
-        android:layout_width="176dp"
-        android:layout_height="60dp"
+        android:layout_width="207dp"
+        android:layout_height="46dp"
         android:background="@color/white"
         android:text="Name :"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.785"
+        app:layout_constraintHorizontal_bias="0.926"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.382"
+        app:layout_constraintVertical_bias="0.379"
 
         />
 
     <TextView
         android:id="@+id/reademail"
-        android:layout_width="176dp"
-        android:layout_height="60dp"
+        android:layout_width="207dp"
+        android:layout_height="54dp"
         android:background="@color/white"
         android:text="Email :"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.774"
+        app:layout_constraintHorizontal_bias="0.926"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.466" />
 
     <TextView
         android:id="@+id/readdistrict"
-        android:layout_width="176dp"
-        android:layout_height="60dp"
+        android:layout_width="207dp"
+        android:layout_height="55dp"
         android:background="@color/white"
         android:text="district"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.787"
+        app:layout_constraintHorizontal_bias="0.921"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.627" />
+        app:layout_constraintVertical_bias="0.562" />
 
     <TextView
         android:id="@+id/readnumber"
-        android:layout_width="176dp"
-        android:layout_height="60dp"
+        android:layout_width="207dp"
+        android:layout_height="63dp"
         android:background="@color/white"
         android:text="Number"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.787"
+        app:layout_constraintHorizontal_bias="0.911"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.737" />
+        app:layout_constraintVertical_bias="0.67" />
 
     <TextView
         android:id="@+id/readage"
-        android:layout_width="176dp"
+        android:layout_width="207dp"
         android:layout_height="60dp"
         android:background="@color/white"
         android:text="Age"
@@ -123,14 +124,14 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.774"
+        app:layout_constraintHorizontal_bias="0.921"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.858" />
+        app:layout_constraintVertical_bias="0.774" />
 
     <TextView
         android:id="@+id/readgender"
-        android:layout_width="176dp"
+        android:layout_width="207dp"
         android:layout_height="60dp"
         android:background="@color/white"
         android:text="Gender"
@@ -138,44 +139,44 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.774"
+        app:layout_constraintHorizontal_bias="0.901"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.97" />
+        app:layout_constraintVertical_bias="0.892" />
 
     <TextView
         android:id="@+id/textView111"
-        android:layout_width="130dp"
-        android:layout_height="73dp"
+        android:layout_width="120dp"
+        android:layout_height="46dp"
         android:layout_marginTop="260dp"
         android:hint="Name :"
         android:textColor="#000000"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintHorizontal_bias="0.185"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView122"
-        android:layout_width="116dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="340dp"
+        android:layout_width="122dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="316dp"
         android:hint="E-mail :"
         android:textColor="#000000"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.172"
+        app:layout_constraintHorizontal_bias="0.186"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView134"
-        android:layout_width="116dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="424dp"
+        android:layout_width="112dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="380dp"
         android:hint="District:"
         android:textColor="@color/black"
         android:textSize="30sp"
@@ -187,9 +188,9 @@
 
     <TextView
         android:id="@+id/textView145"
-        android:layout_width="139dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="500dp"
+        android:layout_width="118dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="448dp"
         android:hint="Number :"
         android:textColor="#000000"
         android:textSize="30sp"
@@ -203,13 +204,13 @@
         android:id="@+id/textView156"
         android:layout_width="116dp"
         android:layout_height="55dp"
-        android:layout_marginTop="576dp"
+        android:layout_marginTop="520dp"
         android:hint="Age:"
         android:textColor="#000000"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.183"
+        app:layout_constraintHorizontal_bias="0.172"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -217,14 +218,15 @@
         android:id="@+id/textView167"
         android:layout_width="116dp"
         android:layout_height="55dp"
-        android:layout_marginTop="648dp"
+        android:layout_marginTop="604dp"
         android:hint="Gender:"
         android:textColor="#000000"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.183"
+        app:layout_constraintHorizontal_bias="0.186"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
