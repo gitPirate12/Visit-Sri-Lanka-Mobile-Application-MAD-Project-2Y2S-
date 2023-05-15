@@ -134,6 +134,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.962"
         android:textSize="25sp"
+        android:background="@drawable/bookbuttonhotel"
         android:drawableLeft="@drawable/baseline_system_update_alt_24"/>
 
 
