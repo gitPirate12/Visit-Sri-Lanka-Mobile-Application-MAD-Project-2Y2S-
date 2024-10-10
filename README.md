@@ -1,22 +1,81 @@
-# Visit-Sri-Lanka-Mobile-Application-MAD-Project-2Y2S
-This repository includes codes related to mobile application developing under 2nd year 2nd semester Mobile Application Development(MAD) module.
 
-## Description about the overall project.
+# Visit Sri Lanka Mobile Application - MAD Project (2Y2S)
 
-The tourism industry can contribute significantly to developing a country’s economy. The tourism industry mainly generates new job opportunities in various sectors, such as hotels, restaurants, transportation, and entertainment. This can lead to increased income for individuals and contribute to the country's overall economic growth and tourism can bring foreign currency into a country through expenditure by tourists on accommodation, food, shopping, and other activities. This can contribute to the country's foreign exchange reserves, which can be used for various purposes like importing petroleum, essential medicines, foodstuff, fertilizers, and auto parts, etc. As well as the tourism industry can also contribute to the government’s revenue through taxes on tourism-related goods and services, such as value-added taxes and taxes on visas. This tax revenue can also be invested by the government for the well-being of the people of the country.
-At present, the lack of foreign exchange (due to which, the delay in payment of foreign exchange and import of essential materials) and unemployment can be identified as some main economic problems in Sri Lanka.
-Therefore, our group decided to develop a mobile application solution called “Visit Sri Lanka”, with the aim of increasing the amount of foreign exchange flowing into the country through foreign tourists and providing a solution to unemployment. It includes the following four main components.
-01.	Functionality for foreigners registration and sharing tour experiences with other users of the application.
-02.	Taxi Driver Management System.
-03.	Hotel Management System.
-04.	Tour Guide Registration and Selecting Tour Guides
+This repository contains the code for the **Visit Sri Lanka Mobile Application**, developed as part of the Mobile Application Development (MAD) module for the 2nd year, 2nd semester. The project aims to boost Sri Lanka's tourism by creating an app that addresses key areas in the tourism industry.
 
-These four main components are implemented by the members of group.
+## Project Overview
 
-## Group Members
+The app includes four main components:
+1. **Tourist Registration and Experience Sharing**
+2. **Taxi Driver Management System**
+3. **Hotel Management System**
+4. **Tour Guide Registration and Selection**
 
-### 01. IT21177514 Ransika M.R.T.-(M. Ranasinghe Tharin Ransika)
-### 02. IT20012892 Ahamed M.S.A.-(gitPirate12)
-### 03. IT21193804 Weerasekara D.D.R.R.-(DulanWeerasekara)
-### 04. IT21158568 Sindujan P.-()
+---
 
+## Prerequisites
+
+- **Android Studio**: Make sure Android Studio is installed on your system.
+- **Node.js**: Required for managing the backend and installing dependencies.
+- **npm**: Node Package Manager (usually installed with Node.js).
+
+---
+
+## Running the Project in Android Studio
+
+### 1. **Clone the Repository**:
+   Clone the project repository to your local machine using the following command:
+   ```bash
+   git clone <repository-url>
+   ```
+
+### 2. **Open the Project in Android Studio**:
+   - Launch **Android Studio**.
+   - Open the project folder by navigating to **File > Open** and selecting the project directory (`Visit-Sri-Lanka-Mobile-Application`).
+
+### 3. **Install Dependencies**:
+   You will need to install the project dependencies using npm:
+   1. Open the **Terminal** in Android Studio (bottom tab or use `Alt + F12`).
+   2. Run the following command in the project root:
+      ```bash
+      npm install
+      ```
+
+### 4. **Configure Android SDK**:
+   Ensure the Android SDK is correctly installed and configured:
+   - In Android Studio, go to **File > Project Structure > SDK Location**.
+   - Check that the Android SDK path is set correctly.
+
+### 5. **Start the Metro Bundler**:
+   Before running the app, start the React Native Metro bundler:
+   ```bash
+   npx react-native start
+   ```
+
+### 6. **Run the App on an Emulator/Device**:
+   Once the bundler is running, you can launch the app:
+   - Ensure an Android Emulator is running, or connect a physical Android device via USB with **Developer Mode** and **USB Debugging** enabled.
+   - Run the following command to launch the app:
+     ```bash
+     npx react-native run-android
+     ```
+
+   Alternatively, you can click the **Run** button in Android Studio to compile and run the app directly from the IDE.
+
+---
+
+## Common Issues and Troubleshooting:
+
+1. **Metro Bundler Issues**:
+   - If the bundler is stuck or not loading, restart it using:
+     ```bash
+     npx react-native start --reset-cache
+     ```
+
+2. **Emulator Problems**:
+   - If the emulator is not starting, make sure you’ve configured the Android Virtual Device (AVD) in Android Studio by going to **Tools > AVD Manager**.
+
+3. **USB Debugging Issues**:
+   - If a physical device is not detected, ensure **Developer Mode** and **USB Debugging** are enabled on your Android device.
+
+---
